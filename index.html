@@ -22,13 +22,19 @@
                 <button id="openTools" class="action-btn">Open Tools</button>
             </div>
             <div id="toolbox">
-                <h2>Toolbox</h2>
-                <button class="tool-btn" id="drawTool">Draw</button>
-                <button class="tool-btn" id="colorPickerTool">Color Picker</button>
-                <button class="tool-btn" id="brightnessTool">Adjust Brightness</button>
-                <button class="tool-btn" id="contrastTool">Adjust Contrast</button>
-                <button class="tool-btn" id="blurTool">Blur</button>
-                <button class="tool-btn" id="invertTool">Invert Colors</button>
+                <h2>Tools</h2>
+                <div class="tool-row">
+                    <button class="tool-btn" id="drawTool">Draw</button>
+                    <button class="tool-btn" id="colorPickerTool">Color Picker</button>
+                </div>
+                <div class="tool-row">
+                    <button class="tool-btn" id="brightnessTool">Brightness</button>
+                    <button class="tool-btn" id="contrastTool">Contrast</button>
+                </div>
+                <div class="tool-row">
+                    <button class="tool-btn" id="blurTool">Blur</button>
+                    <button class="tool-btn" id="invertTool">Invert</button>
+                </div>
             </div>
             <div id="canvasWrapper">
                 <canvas id="textureCanvas"></canvas>
@@ -36,23 +42,16 @@
             </div>
             <div id="materialPreview">
                 <h2>Material Preview</h2>
-                <div id="materialPlaceholder">Material preview area (placeholder)</div>
+                <div id="materialPlaceholder">Material preview area</div>
             </div>
             <div id="action-buttons">
                 <button id="applyFilter" class="action-btn">Apply Filter</button>
                 <button id="saveTexture" class="action-btn">Save Texture</button>
             </div>
-            <div id="materialPreview">
-    <h2 class="material-title">Material Preview</h2>
-    <div class="material-options">
-        <div class="material-preview-item" id="metalSurface"></div>
-        <div class="material-preview-item" id="matteSurface"></div>
-    </div>
-            </div>
         </main>
     </div>
 
-    <script src="editor.js"></script>
+    <script src="js/editor.js"></script>
 </body>
 
 </html>
