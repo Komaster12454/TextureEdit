@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texture Editor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="editor">
+        <header>
+            <h1>Texture Editor</h1>
+            <!-- File input for uploading an image -->
+            <input type="file" id="uploadTexture" accept="image/*">
+        </header>
+        <div id="canvasWrapper">
+            <!-- Canvas where the texture will be displayed and edited -->
+            <canvas id="textureCanvas"></canvas>
+        </div>
+        <footer>
+            <!-- Buttons for applying a filter and saving the edited texture -->
+            <button id="applyFilter">Apply Filter</button>
+            <button id="saveTexture">Save Texture</button>
+        </footer>
+    </div>
+    <!-- Link to the JavaScript file -->
+    <script src="js/editor.js"></script>
+</body>
+</html>
