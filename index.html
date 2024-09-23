@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texture Editor</title>
+    <title>Futuristic Texture Editor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,11 +20,13 @@
             </div>
             <div id="canvasWrapper">
                 <canvas id="textureCanvas"></canvas>
-                <img id="uploadedImage" class="uploaded-img" alt="Uploaded Texture" />
             </div>
             <div id="action-buttons">
+                <button id="drawTool" class="action-btn">Draw</button>
                 <button id="applyFilter" class="action-btn">Apply Filter</button>
                 <button id="saveTexture" class="action-btn">Save Texture</button>
+                <button id="saveNormalMap" class="action-btn">Save as Normal Map</button>
+                <button id="saveHeightMap" class="action-btn">Save as Height Map</button>
             </div>
         </main>
     </div>
