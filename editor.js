@@ -1,10 +1,7 @@
 // Canvas setup
 const canvas = document.getElementById('textureCanvas');
 const ctx = canvas.getContext('2d');
-const uploadedImage = document.getElementById('uploadedImage');
-let drawing = false;
-let lastX = 0;
-let lastY = 0;
+let imageLoaded = false;
 
 // Handling image upload
 document.getElementById('uploadTexture').addEventListener('change', function(event) {
@@ -17,8 +14,7 @@ document.getElementById('uploadTexture').addEventListener('change', function(eve
             canvas.width = img.width;
             canvas.height = img.height;
             ctx.drawImage(img, 0, 0);
-            uploadedImage.src = canvas.toDataURL();
-            uploadedImage.style.display = 'block';
+            imageLoaded = true; // Set flag to true when image is loaded
         };
         img.src = e.target.result;
     };
@@ -28,12 +24,13 @@ document.getElementById('uploadTexture').addEventListener('change', function(eve
 
 // Drawing tool
 canvas.addEventListener('mousedown', (e) => {
+    if (!imageLoaded) return;
     drawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
 
 canvas.addEventListener('mousemove', (e) => {
-    if (!drawing) return;
+    if (!imageLoaded || !drawing) return;
     ctx.strokeStyle = '#ff0000';
     ctx.lineWidth = 5;
     ctx.lineJoin = 'round';
@@ -51,6 +48,11 @@ canvas.addEventListener('mouseout', () => drawing = false);
 
 // Save Texture with selected type (Normal, Height, Original)
 document.getElementById('saveTexture').addEventListener('click', function() {
+    if (!imageLoaded) {
+        alert('No image loaded!');
+        return;
+    }
+    
     const type = prompt('Enter texture type (normal, height, original):').toLowerCase();
     if (type === 'normal' || type === 'height' || type === 'original') {
         generateAndSaveTexture(type);
