@@ -19,6 +19,29 @@ document.getElementById('uploadTexture').addEventListener('change', function (e)
         reader.readAsDataURL(file);
     }
 });
+// Function to display the texture on material surfaces
+function updateMaterialPreview(textureUrl) {
+    const previewElements = document.querySelectorAll('.material-preview-item');
+
+    previewElements.forEach((preview) => {
+        preview.style.backgroundImage = `url(${textureUrl})`;
+    });
+}
+
+document.getElementById('uploadTexture').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+        const imageUrl = e.target.result;
+        document.getElementById('uploadedImage').src = imageUrl;
+        document.getElementById('uploadedImage').style.display = 'block';
+
+        updateMaterialPreview(imageUrl);
+    };
+
+    reader.readAsDataURL(file);
+});
 
 // Draw tool
 document.getElementById('drawTool').addEventListener('click', function () {
