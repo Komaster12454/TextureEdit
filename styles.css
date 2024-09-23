@@ -26,10 +26,14 @@ body {
 }
 
 /* Header Styles */
+header {
+    width: 100%;
+    text-align: center;
+}
+
 header h1 {
     color: #00ccff;
     font-size: 2.5rem;
-    text-align: center;
     margin: 20px 0;
     text-shadow: 0 0 10px #00ccff;
     letter-spacing: 2px;
@@ -86,6 +90,7 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    gap: 10px; /* Added gap between buttons */
 }
 
 .upload-btn {
@@ -149,7 +154,7 @@ main {
     100% { box-shadow: 0 0 5px #007bff, 0 0 10px #007bff; }
 }
 
-.upload-btn, .action-btn {
+.upload-btn, .tool-btn {
     animation: glowing 1.5s infinite alternate;
 }
 
