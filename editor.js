@@ -1,5 +1,3 @@
-// editor.js
-
 // Load uploaded texture onto the canvas
 document.getElementById('uploadTexture').addEventListener('change', function(event) {
     const file = event.target.files[0];
@@ -14,6 +12,9 @@ document.getElementById('uploadTexture').addEventListener('change', function(eve
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
+
+                // Add animation to canvasWrapper
+                document.getElementById('canvasWrapper').classList.add('active');
             }
         };
         reader.readAsDataURL(file);
@@ -37,6 +38,12 @@ document.getElementById('applyFilter').addEventListener('click', () => {
     }
 
     ctx.putImageData(imageData, 0, 0);
+
+    // Add a subtle flash animation to indicate filter applied
+    document.getElementById('textureCanvas').classList.add('flash');
+    setTimeout(() => {
+        document.getElementById('textureCanvas').classList.remove('flash');
+    }, 300);
 });
 
 // Save the edited texture
