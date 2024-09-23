@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texture Editor</title>
+    <title>Futuristic Texture Editor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="editor-container">
         <header>
-            <h1>Texture Editor</h1>
+            <h1>Futuristic Texture Editor</h1>
         </header>
         <main>
             <div id="controls">
@@ -17,9 +19,24 @@
                     <span>Upload Texture</span>
                     <input type="file" id="uploadTexture" accept="image/*" hidden>
                 </label>
+                <button id="openTools" class="action-btn">Open Tools</button>
+            </div>
+            <div id="toolbox">
+                <h2>Toolbox</h2>
+                <button class="tool-btn" id="drawTool">Draw</button>
+                <button class="tool-btn" id="colorPickerTool">Color Picker</button>
+                <button class="tool-btn" id="brightnessTool">Adjust Brightness</button>
+                <button class="tool-btn" id="contrastTool">Adjust Contrast</button>
+                <button class="tool-btn" id="blurTool">Blur</button>
+                <button class="tool-btn" id="invertTool">Invert Colors</button>
             </div>
             <div id="canvasWrapper">
                 <canvas id="textureCanvas"></canvas>
+                <img id="uploadedImage" alt="Your uploaded texture will appear here." />
+            </div>
+            <div id="materialPreview">
+                <h2>Material Preview</h2>
+                <div id="materialPlaceholder">Material preview area (placeholder)</div>
             </div>
             <div id="action-buttons">
                 <button id="applyFilter" class="action-btn">Apply Filter</button>
@@ -27,6 +44,8 @@
             </div>
         </main>
     </div>
+
     <script src="js/editor.js"></script>
 </body>
+
 </html>
