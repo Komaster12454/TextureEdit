@@ -14,39 +14,29 @@
             <h1>Futuristic Texture Editor</h1>
         </header>
         <main>
-            <div id="controls">
-                <label for="uploadTexture" class="upload-btn">
-                    <span>Upload Texture</span>
-                    <input type="file" id="uploadTexture" accept="image/*" hidden>
-                </label>
-                <button id="openTools" class="action-btn">Open Tools</button>
-            </div>
-            <div id="toolbox">
+            <div id="sidebar">
                 <h2>Tools</h2>
-                <div class="tool-row">
-                    <button class="tool-btn" id="drawTool">Draw</button>
-                    <button class="tool-btn" id="colorPickerTool">Color Picker</button>
-                </div>
-                <div class="tool-row">
-                    <button class="tool-btn" id="brightnessTool">Brightness</button>
-                    <button class="tool-btn" id="contrastTool">Contrast</button>
-                </div>
-                <div class="tool-row">
-                    <button class="tool-btn" id="blurTool">Blur</button>
-                    <button class="tool-btn" id="invertTool">Invert</button>
-                </div>
+                <button class="tool-btn" id="drawTool">Draw</button>
+                <button class="tool-btn" id="colorPickerTool">Color Picker</button>
+                <button class="tool-btn" id="brightnessTool">Brightness</button>
+                <button class="tool-btn" id="contrastTool">Contrast</button>
+                <button class="tool-btn" id="blurTool">Blur</button>
+                <button class="tool-btn" id="invertTool">Invert</button>
             </div>
             <div id="canvasWrapper">
+                <div id="controls">
+                    <label for="uploadTexture" class="upload-btn">
+                        <span>Upload Texture</span>
+                        <input type="file" id="uploadTexture" accept="image/*" hidden>
+                    </label>
+                    <button id="saveTexture" class="action-btn">Save Texture</button>
+                </div>
                 <canvas id="textureCanvas"></canvas>
                 <img id="uploadedImage" alt="Your uploaded texture will appear here." />
             </div>
             <div id="materialPreview">
                 <h2>Material Preview</h2>
                 <div id="materialPlaceholder">Material preview area</div>
-            </div>
-            <div id="action-buttons">
-                <button id="applyFilter" class="action-btn">Apply Filter</button>
-                <button id="saveTexture" class="action-btn">Save Texture</button>
             </div>
         </main>
     </div>
