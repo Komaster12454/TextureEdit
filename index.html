@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id="editor">
+    <div id="editor-container">
         <header>
             <h1>Texture Editor</h1>
-            <!-- File input for uploading an image -->
-            <input type="file" id="uploadTexture" accept="image/*">
         </header>
+        <div id="controls">
+            <label for="uploadTexture" class="upload-btn">
+                <span>Upload Texture</span>
+                <input type="file" id="uploadTexture" accept="image/*" hidden>
+            </label>
+        </div>
         <div id="canvasWrapper">
-            <!-- Canvas where the texture will be displayed and edited -->
             <canvas id="textureCanvas"></canvas>
         </div>
-        <footer>
-            <!-- Buttons for applying a filter and saving the edited texture -->
-            <button id="applyFilter">Apply Filter</button>
-            <button id="saveTexture">Save Texture</button>
-        </footer>
+        <div id="action-buttons">
+            <button id="applyFilter" class="action-btn">Apply Filter</button>
+            <button id="saveTexture" class="action-btn">Save Texture</button>
+        </div>
     </div>
-    <!-- Link to the JavaScript file -->
     <script src="js/editor.js"></script>
 </body>
 </html>
