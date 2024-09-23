@@ -1,4 +1,4 @@
-// Load uploaded texture onto the canvas
+// Load uploaded texture onto the canvas and display it
 document.getElementById('uploadTexture').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
@@ -12,6 +12,11 @@ document.getElementById('uploadTexture').addEventListener('change', function(eve
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
+
+                // Display the uploaded image
+                const uploadedImage = document.getElementById('uploadedImage');
+                uploadedImage.src = e.target.result;
+                uploadedImage.style.display = 'block'; // Show the image
 
                 // Add animation to canvasWrapper
                 document.getElementById('canvasWrapper').classList.add('active');
